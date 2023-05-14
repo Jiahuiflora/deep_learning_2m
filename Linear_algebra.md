@@ -222,8 +222,7 @@ $A^2+(k+j) A B+k j B^2 \neq (A+kB)(A+jB)$
 
 $A^2+2 A+E=A^2+2 A E+E^2=(A+E)^2$
 
--
-$|\lambda A|=\lambda^n|A|$
+- $|\lambda A|=\lambda^n|A|$
 
 ## 例题
 $$
