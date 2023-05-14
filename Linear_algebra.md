@@ -83,22 +83,22 @@ $$
 - 某行（列）为两项相加减时，行列式可拆为两个行列式相加减
 
 已知
-$
+$$
 \left|\begin{array}{lll}
 a_1 & b_1 & c_1 \\
 a_2 & b_2 & c_2 \\
 a_3 & b_3 & c_3
 \end{array}\right|=1
-$
+$$
 
 试求
-$
+$$
 \left|\begin{array}{lll}
 a_1+c_1 & b_1 & a_1+b_1 \\
 a_2+c_2 & b_2 & a_2+b_2 \\
 a_3+c_3 & b_3 & a_3+b_3
 \end{array}\right|
-$
+$$
 
 [this is the description](http://www.github.com)
 
