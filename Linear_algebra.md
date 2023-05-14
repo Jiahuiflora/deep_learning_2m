@@ -200,3 +200,79 @@ $$
 
 齐次，所以该方程组有零解和非零解，没有唯一解
 
+# 课时3 矩阵的运算上（加减、相乘、取行列式）
+## 运算
+- 
+
+$$
+\mathrm{A} \cdot \mathrm{E}=\mathrm{A} \quad \mathrm{E} \cdot \mathrm{A}=\mathrm{A} \quad \mathrm{E}^2=\mathrm{E} \cdot \mathrm{E}=\mathrm{E}
+$$
+
+- 
+$AB \neq BA$ 
+
+-
+$AX = AY \rlap{\(\quad\not\)}\implies X=Y$
+
+- 
+$(AB)^k \neq B^k A^k$ 
+
+-
+$A^2+(k+j) A B+k j B^2 \neq (A+kB)(A+jB)$ 
+
+$A^2+2 A+E=A^2+2 A E+E^2=(A+E)^2$
+
+-
+$|\lambda A|=\lambda^n|A|$
+
+## 例题
+$$
+|A|=\left|\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+4 & 5 & 7
+\end{array}\right|=-1
+$$
+
+$$
+|B|=\left(\begin{array}{ccc}
+2 & 4 & 6 \\
+4 & 6 & 8 \\
+8 & 10 & 14
+\end{array}\right) = ?
+$$
+
+$$
+\begin{aligned}
+|A| & =2^3\left|\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+4 & 5 & 7
+\end{array}\right| \\
+& =8 \times(-1) \\
+& =-8
+\end{aligned}
+$$
+
+[this is the description](http://www.github.com)
+
+This paragraph has some `variable` inline code.
+
+```html
+<p>A paragraph example</p>
+```
+```javascript
+let num = Math.random();
+```
+
+![alt text](http://picsum.photos/200/200)
+
+Some paragraph with text.
+> blockquote text below the paragraph
+
+| 方程组 | D!=0 | D=0 |
+| --- | --- | --- |
+| 齐次 | 只有一组零解 | 有零解和非零解 |
+| 非齐次  | 只有一组非零解  | 有多个解或无解 |
+
+This is being * created * on a ** Friday ** ~~Saturday~~.
