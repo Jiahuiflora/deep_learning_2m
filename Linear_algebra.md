@@ -78,3 +78,47 @@ x_1{ }^{n-1} & x_2{ }^{n-1} & \cdots & x_n{}^{n-1}
 & *\left(x_2-x_1\right)
 \end{aligned}
 $$
+
+- 两行（列）相同或成比例时，行列式为0
+- 某行（列）为两项相加减时，行列式可拆为两个行列式相加减
+
+已知
+$
+\left|\begin{array}{lll}
+a_1 & b_1 & c_1 \\
+a_2 & b_2 & c_2 \\
+a_3 & b_3 & c_3
+\end{array}\right|=1
+$
+
+试求
+$
+\left|\begin{array}{lll}
+a_1+c_1 & b_1 & a_1+b_1 \\
+a_2+c_2 & b_2 & a_2+b_2 \\
+a_3+c_3 & b_3 & a_3+b_3
+\end{array}\right|
+$
+
+[this is the description](http://www.github.com)
+
+This paragraph has some `variable` inline code.
+
+```html
+<p>A paragraph example</p>
+```
+```javascript
+let num = Math.random();
+```
+
+![alt text](http://picsum.photos/200/200)
+
+Some paragraph with text.
+> blockquote text below the paragraph
+
+| heading | header | head |
+| --- | --- | --- |
+| content | more content | text |
+| more | more | more |
+
+This is being * created * on a ** Friday ** ~~Saturday~~.
