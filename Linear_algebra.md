@@ -208,17 +208,13 @@ $$
 \mathrm{A} \cdot \mathrm{E}=\mathrm{A} \quad \mathrm{E} \cdot \mathrm{A}=\mathrm{A} \quad \mathrm{E}^2=\mathrm{E} \cdot \mathrm{E}=\mathrm{E}
 $$
 
-- 
-$AB \neq BA$ 
+- $AB \neq BA$ 
 
--
-$AX = AY \rlap{\(\quad\not\)}\implies X=Y$
+- $AX = AY \rlap{\(\quad\not\)}\implies X=Y$
 
-- 
-$(AB)^k \neq B^k A^k$ 
+- $(AB)^k \neq B^k A^k$ 
 
--
-$A^2+(k+j) A B+k j B^2 \neq (A+kB)(A+jB)$ 
+- $A^2+(k+j) A B+k j B^2 \neq (A+kB)(A+jB)$ 
 
 $A^2+2 A+E=A^2+2 A E+E^2=(A+E)^2$
 
