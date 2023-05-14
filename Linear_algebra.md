@@ -51,6 +51,7 @@ $$
 ## 课程2 行列式的计算和应用
 
 - n x n matrix
+
 $$
 \left|\begin{array}{cccc}
 x & a & \cdots & a \\
@@ -61,6 +62,7 @@ a & a & \cdots & x
 $$
 
 - n x n matrix, first row is 1
+
 $$
 \left|\begin{array}{cccc}
 1 & 1 & \cdots & 1 \\
