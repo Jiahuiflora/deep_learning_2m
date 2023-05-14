@@ -34,3 +34,21 @@ Some paragraph with text.
 | more | more | more |
 
 This is being * created * on a ** Friday ** ~~Saturday~~.
+
+
+$$
+\left|\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+2 & 3 & 4 & 5 \\
+4 & 5 & 7 & 8 \\
+8 & 9 & 10 & 12
+\end{array}\right|=-1
+$$
+
+$$\left|\begin{array}{cccc}1 & 2 & 3 & 4 \\ 2 & 3 & 4 & 5 \\ 4 & 5 & 7 & 8 \\ 8 & 9 & 10 & 12\end{array}\right|=-1$$
+    
+
+$$ {\left\lbrack \matrix{2 & 3 \cr 4 & 5} \right\rbrack} 
+* \left\lbrack \matrix{1 & 0 \cr 0 & 1} \right\rbrack
+= \left\lbrack \matrix{2 & 3 \cr 4 & 5} \right\rbrack
+$$
