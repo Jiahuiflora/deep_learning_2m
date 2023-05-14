@@ -73,8 +73,8 @@ x_1{ }^{n-1} & x_2{ }^{n-1} & \cdots & x_n{}^{n-1}
 \end{array}\right|=
 \begin{aligned}
 & \left(x_n-x_{n-1}\right)\left(x_n-x_{n-2}\right)\left(x_n-x_{n-3}\right) \cdots \cdots\left(x_n-x_1\right) \\
-& x\left(x_{n-1}-x_{n-2}\right)\left(x_{n-1}-x_{n-3}\right) \cdots \cdots\left(x_{n-1}-x_1\right) \\
-& x \cdots \cdots \\
-& x\left(x_2-x_1\right)
+& *\left(x_{n-1}-x_{n-2}\right)\left(x_{n-1}-x_{n-3}\right) \cdots \cdots\left(x_{n-1}-x_1\right) \\
+& *\cdots \cdots \\
+& *\left(x_2-x_1\right)
 \end{aligned}
 $$
