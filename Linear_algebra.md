@@ -1,13 +1,13 @@
-# 猴博士 线性代数2小时
-## 课程1 行列式的性质
+猴博士 线性代数2小时
+# 课程1 行列式的性质
 行列式的计算，output 1 value.
 
-### 性质
+## 性质
 - 某行（列）加上或减去另一行（列）的几倍，行列式不变
 - 某行（列）乘k,等于k乘以此行列式
 - 互换两行或两列，行列式变号
  
-### 例题    
+## 例题    
 $$
 \left|\begin{array}{cccc}
 1 & 2 & 3 & 4 \\
@@ -17,7 +17,7 @@ $$
 \end{array}\right|=-1
 $$
 
-#### Ex 1
+### Ex 1
 
 $$
 \left|\begin{array}{cccc}
@@ -29,7 +29,7 @@ $$
 
 -6
 
-#### Ex 2
+### Ex 2
 
 $$
 \left|\begin{array}{cccc}
@@ -42,7 +42,7 @@ $$
 
 1
 
-#### Ex 3
+### Ex 3
 
 $$
 \left|\begin{array}{llll}
@@ -55,8 +55,8 @@ $$
 
 -45 
 
-## 课程2 行列式的计算和应用
-### 简易算法
+# 课程2 行列式的计算和应用
+## 简易算法
 - n x n matrix
 
 $$
@@ -89,7 +89,7 @@ $$
 - 两行（列）相同或成比例时，行列式为0
 - 某行（列）为两项相加减时，行列式可拆为两个行列式相加减
 
-- 行列式
+- 
 
 $$
 \begin{aligned}
@@ -98,8 +98,18 @@ $$
 \end{aligned}
 $$
 
-### 例题
-#### Ex 1
+- 给一方程组，判断其解的情况
+
+| 方程组 | $D \neq 0$ | D=0 |
+| --- | --- | --- |
+| 齐次 | 只有一组零解 | 有零解和非零解 |
+| 非齐次  | 只有一组非零解  | 有多个解或无解 |
+
+齐次：方程组只有x和0 ($x_1+2 x_2+3 x_3=0$)\
+非齐次：除了x和0，还有常数项($x_1+2 x_2+3 x_3=1$)\
+
+## 例题
+### Ex 1
 
 $$
 \left|\begin{array}{lll}
@@ -119,7 +129,7 @@ $$
 
 -1
 
-#### Ex 2 
+### Ex 2 
 余子式M，代数余子式A
 
 $$
@@ -143,7 +153,7 @@ $$
 A_{23}=(-1)^{2+3} \cdot M_{23}=-1 \times(-8)=8
 $$
 
-#### Ex 3
+### Ex 3
 
 $$
 \begin{aligned}
@@ -168,25 +178,25 @@ $$
 \end{aligned}
 $$
 
-[this is the description](http://www.github.com)
+### Ex 4
 
-This paragraph has some `variable` inline code.
+$$
+\begin{array}{r}
+x_1+2 x_2+3 x_3=0 \\
+4 x_1+5 x_2+6 x_3=0 \\
+7 x_1+8 x_2+9 x_3=0
+\end{array}
+$$
 
-```html
-<p>A paragraph example</p>
-```
-```javascript
-let num = Math.random();
-```
+是否有唯一解？
 
-![alt text](http://picsum.photos/200/200)
+$$
+\mathrm{D}=\left|\begin{array}{lll}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}\right|=0
+$$
 
-Some paragraph with text.
-> blockquote text below the paragraph
+齐次，所以该方程组有零解和非零解，没有唯一解
 
-| heading | header | head |
-| --- | --- | --- |
-| content | more content | text |
-| more | more | more |
-
-This is being * created * on a ** Friday ** ~~Saturday~~.
