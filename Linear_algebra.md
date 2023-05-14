@@ -202,8 +202,9 @@ $$
 
 # 课时3 矩阵的运算上（加减、相乘、取行列式）
 ## 运算
-- $\mathrm{A} \cdot \mathrm{E}=\mathrm{A} \quad \mathrm{E} \cdot \mathrm{A}=\mathrm{A} \quad \mathrm{E}^2=\mathrm{E} \cdot \mathrm{E}=\mathrm{E}
-$
+- 
+$$\mathrm{A} \cdot \mathrm{E}=\mathrm{A} \quad \mathrm{E} \cdot \mathrm{A}=\mathrm{A} \quad \mathrm{E}^2=\mathrm{E} \cdot \mathrm{E}=\mathrm{E}
+$$
 
 - $AB \neq BA$ 
 
