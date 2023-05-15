@@ -583,6 +583,7 @@ $$
 # 课时6 解方程组
 ## 概念
 - 判断方程组情况
+
 \begin{tabular}{|c|c|c|c|}
 \hline \multicolumn{2}{|r|}{ 条件} & \multicolumn{2}{|c|}{ 解的情况 } \\
 \hline \multirow{2}{*}{齐次} & $R(A)= \text{未知数个数}$ & \multicolumn{2}{|c|}{唯一解(零解)} \\
