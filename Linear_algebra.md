@@ -106,7 +106,7 @@ $$
 | 非齐次  | 只有一组非零解  | 有多个解或无解 |
 
 齐次：方程组只有x和0 ($x_1+2 x_2+3 x_3=0$)\
-非齐次：除了x和0，还有常数项($x_1+2 x_2+3 x_3=1$)\
+非齐次：除了x和0，还有常数项($x_1+2 x_2+3 x_3=1$)
 
 ## 例题
 ### Ex 1
@@ -206,15 +206,18 @@ $$
 $$\mathrm{A} \cdot \mathrm{E}=\mathrm{A} \quad \mathrm{E} \cdot \mathrm{A}=\mathrm{A} \quad \mathrm{E}^2=\mathrm{E} \cdot \mathrm{E}=\mathrm{E}
 $$
 
-- $AB \neq BA$ 
+- $AB \neq BA$
+
+- ABC = A(BC)
 
 - $AX = AY \rlap{\(\quad\not\)}\implies X=Y$
+- doesnt imply
 
 - $(AB)^k \neq B^k A^k$ 
 
 - $A^2+(k+j) A B+k j B^2 \neq (A+kB)(A+jB)$ 
 
-$A^2+2 A+E=A^2+2 A E+E^2=(A+E)^2$
+- $A^2+2 A+E=A^2+2 A E+E^2=(A+E)^2$
 
 - $|\lambda A|=\lambda^n|A|$
 
@@ -237,7 +240,7 @@ $$
 
 $$
 \begin{aligned}
-|A| & =2^3\left|\begin{array}{lll}
+|B| & =2^3\left|\begin{array}{lll}
 1 & 2 & 3 \\
 2 & 3 & 4 \\
 4 & 5 & 7
@@ -247,25 +250,350 @@ $$
 \end{aligned}
 $$
 
-[this is the description](http://www.github.com)
 
-This paragraph has some `variable` inline code.
+# 课时4 矩阵的运算 下（转置、逆、秩）
+## 计算
+- 列行列相乘，可以先算行列 （e.g. A = (1 0 1),  $\mathrm{A}^{\mathrm{T}} \mathbf{A} \mathbf{A}^{\mathrm{T}} = \mathrm{A}^{\mathrm{T}} (\mathbf{A} \mathbf{A}^{\mathrm{T}})$）
 
-```html
-<p>A paragraph example</p>
-```
-```javascript
-let num = Math.random();
-```
+- $$
+\begin{aligned}
+& (A B)^T=B^T A^T \\
+& \left|A^T\right|=|A|
+\end{aligned}
+  $$
 
-![alt text](http://picsum.photos/200/200)
+- 矩阵可逆
+  a. n x n matrix
+      b. $|A| \neq 0$ or
+  存在一个矩阵B, 满足AB=E or BA = E 。
 
-Some paragraph with text.
-> blockquote text below the paragraph
+- 求逆矩阵 
+  $(A \vdots E) -> (E \vdots A^{-1})$
+  换行；某行乘上一个数；一行加上或减去另一行乘以数字
 
-| 方程组 | D!=0 | D=0 |
-| --- | --- | --- |
-| 齐次 | 只有一组零解 | 有零解和非零解 |
-| 非齐次  | 只有一组非零解  | 有多个解或无解 |
+-  $A^{-1} \cdot A= A\cdot A^{-1}  = E$
 
-This is being * created * on a ** Friday ** ~~Saturday~~.
+-  $A \cdot A^* = A^* \cdot A=|A| E$
+
+-  矩阵的秩
+      对矩阵进行行变换，使下行左端的0比上行多。R(A)为几行的非零数。
+
+## 例题
+### Ex 1
+设方阵A满足$A^2 - A - 2E = 0$, 证明A可逆。
+
+$$
+\begin{aligned}
+& A^2-A E=2 E \\
+& A(A-E)=2 E \\
+& A\left[\frac{1}{2}(A-E)\right]=E \\
+& B=\frac{1}{2}(A-E) 
+\end{aligned}
+$$
+
+A is n x n matrix, A 可逆
+
+### Ex 2
+$$
+B=\left(\begin{array}{ll}
+1 & 2 \\
+2 & 1
+\end{array}\right)
+$$
+$B^{-1}?$
+
+$$
+\begin{gathered}
+\left(\begin{array}{ll|ll}
+1 & 2 & 1 & 0 \\
+2 & 1 & 0 & 1
+\end{array}\right) \stackrel{r_2-2 r_1}{\longrightarrow}\left(\begin{array}{cc|cc}
+1 & 2 & 1 & 0 \\
+0 & -3 & -2 & 1
+\end{array}\right) \\
+\stackrel{r_2 \times\left(-\frac{1}{3}\right)}{\longrightarrow}\left(\begin{array}{ll|ll}
+1 & 2 & \frac{1}{2} & 0 \\
+0 & 1 & \frac{1}{3} & -\frac{1}{3}
+\end{array}\right) \stackrel{r_1-2 r_2}{\longrightarrow}\left(\begin{array}{rr|rr}
+1 & 0 & -\frac{1}{3} & \frac{2}{3} \\
+0 & 1 & \frac{2}{3} & -\frac{1}{3}
+\end{array}\right)
+\end{gathered}
+$$
+
+### Ex 3
+求矩阵X使其满足AXB=C.
+$X = A^{-1} C B^{-1}$
+
+### Ex 4
+$$
+A=\left(\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+4 & 5 & 7
+\end{array}\right) \text {, 且 } A^* X=A^{-1}+X \text {, } \text{求A}
+$$
+
+$$
+\begin{aligned}
+|A| E X-A X & =E \\
+(|A| E-A) X & =E \\
+(|A| E-A)^{-1} \cdot(|A| E-A) X & =(|A| E-A)^{-1} \cdot E \\
+E X & =(|A| E-A)^{-1} \cdot E^{\prime} \\
+X & =(|A| E-A)^{-1}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+X=(-E-A)^{-1} & =\left[-\left(\begin{array}{lll}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array}\right)-\left(\begin{array}{lll}
+1 & 2 & 3 \\
+2 & 3 & 4 \\
+4 & 5 & 7
+\end{array}\right)\right]^{-1} \\
+& =\left(\begin{array}{ccc}
+-2 & -2 & -3 \\
+-2 & -4 & -4 \\
+-4 & -5 & -8
+\end{array}\right)^{-1} \\
+& =\left(\begin{array}{ccc}
+-2 & \frac{1}{6} & \frac{2}{3} \\
+0 & -\frac{2}{3} & \frac{1}{3} \\
+1 & \frac{1}{3} & -\frac{2}{3}
+\end{array}\right)
+\end{aligned}
+$$
+
+### Ex 5
+$$
+B=\left(\begin{array}{llll}
+1 & 2 & 3 & 4 \\
+2 & 4 & 6 & 8 \\
+3 & 6 & 9 & 12 \\
+2 & 4 & 4 & 5
+\end{array}\right)
+$$
+
+求R(B)?
+
+$$
+\left(\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & -2 & -3
+\end{array}\right) \stackrel{r_2 \leftrightarrow r_4}{\longrightarrow}\left(\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+0 & 0 & -2 & -3 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+$R(B) = 2$
+
+### Ex 6
+
+$$
+B=\left(\begin{array}{llll}
+1 & 2 & 3 & 4 \\
+2 & \mu & 6 & 8 \\
+3 & 6 & 9 & \lambda
+\end{array}\right)
+$$
+
+已知 $R(B) = 1$ , 求 $\lambda ,  \mu$。
+
+$$
+\left(\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+0 & \mu-4 & 0 & 0 \\
+0 & 0 & 0 & \lambda-12
+\end{array}\right)
+$$
+
+4,12
+
+
+
+# 课时5 向量组与线性空间
+
+## 概念
+
+- 判断某向量是否可由某向量组线性表示
+假设A为向量组集合，B为向量组+向量的集合，如果R(A) = R(B), 则可以
+
+- 判断某个向量组是否线性相关
+  若R<向量个数，则相关；若=，则无关
+
+- 已知三维向量空间的一组基底 $a_1, a_2, a_3$，求某一向量 $\beta$ 在此基地下的坐标
+  $\beta=k_1 \alpha_1+k_2 \alpha_2+k_3 \alpha_3$
+  坐标为 $(k_1, k_2, k_3)$
+
+- 求几个行向量的极大无关组
+  组合成matrix，求rank,如果有换行的顺序，则把顺序换一下，然后取前几个的行
+
+##例题
+### Ex 1
+
+$$
+a_1=\left(\begin{array}{l}
+1 \\
+1 \\
+2 \\
+2
+\end{array}\right), a_2=\left(\begin{array}{l}
+1 \\
+2 \\
+1 \\
+3
+\end{array}\right), a_3=\left(\begin{array}{c}
+1 \\
+-2 \\
+4 \\
+0
+\end{array}\right), b=\left(\begin{array}{l}
+1 \\
+0 \\
+3 \\
+1
+\end{array}\right) 
+$$
+
+b能否由$a_1, a_2, a_3$表示
+
+$$
+A=\left(\begin{array}{ccc}
+1 & 1 & 1 \\
+1 & 2 & -2 \\
+2 & 1 & 4 \\
+2 & 3 & 0
+\end{array}\right) \stackrel{\text { 行变换 }}{\longrightarrow}\left(\begin{array}{ccc}
+1 & 1 & 1 \\
+0 & 1 & -3 \\
+0 & 0 & -1 \\
+0 & 0 & 0
+\end{array}\right) \Rightarrow R(A)=3
+$$
+
+$$
+B=\left(\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+1 & 2 & -2 & 0 \\
+2 & 1 & 4 & 3 \\
+2 & 3 & 0 & 1
+\end{array}\right) \stackrel{\text { 行变换 }}{\longrightarrow}\left(\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & 1 & -3 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow R(B)=3
+$$
+
+$\mathrm{b}=k_1 a_1+k_2 a_2+k_3 a_3$
+
+
+### Ex 2
+$$
+a_1=\left(\begin{array}{l}
+1 \\
+1 \\
+2 \\
+2
+\end{array}\right), a_2=\left(\begin{array}{l}
+1 \\
+2 \\
+1 \\
+3
+\end{array}\right), a_3=\left(\begin{array}{c}
+1 \\
+-2 \\
+4 \\
+0
+\end{array}\right), a_4=\left(\begin{array}{l}
+1 \\
+0 \\
+3 \\
+1
+\end{array}\right)
+$$
+
+$A = (a_1, a_2, a_3, a_4)$ 是否线性相关？
+
+$$
+A=\left(\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+1 & 2 & -2 & 0 \\
+2 & 1 & 4 & 3 \\
+2 & 3 & 0 & 1
+\end{array}\right) \stackrel{\text { 行变换 }}{\longrightarrow}\left(\begin{array}{cccc}
+1 & 1 & 1 & 1 \\
+0 & 1 & -3 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow R(A)=3 < \text{向量个数， 所以相关}
+$$
+
+
+线性相关: $a_1, a_2, a_3, a_4$ 中存在一个向量可用其他向量线性表示
+
+$$
+\begin{array}{ll}
+a_4=k_1 a_1+k_2 a_2+k_3 a_3 & a_2=k_1 a_1+k_2 a_3+k_3 a_4 \\
+a_3=k_1 a_1+k_2 a_2+k_3 a_4 & a_1=k_1 a_2+k_2 a_3+k_3 a_4
+\end{array}
+$$
+
+
+### Ex 3
+已知向量 $a_1=(0,-4,12,8), a_2=(-1,-3,5,1), a_3=(3,5,-1,4), a_4=(1,1,1,3)$ 。求向量 $a_1, a_2, a_3, a_4$ 的一个极大无关组。
+
+通过计算
+$$
+\begin{aligned}
+& r_1 \leftrightarrow r_4 \\
+& r_2+r_1\\
+&r_3 - 3r_1 \\
+& r_3 + r_2 \\
+& r_4 - 2 r_2
+\end{aligned}
+$$
+
+$$
+\left(\begin{array}{cccc}
+0 & -4 & 12 & 8 \\
+-1 & -3 & 5 & 1 \\
+3 & 5 & -1 & 4 \\
+1 & 1 & 1 & 3
+\end{array}\right) \stackrel{...}{\longrightarrow}\left(\begin{array}{cccc}
+1 & 1 & 1 & 3 \\
+0 & -2 & 6 & 4 \\
+0 & 0 & 2 & -1 \\
+0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+因为 $r_1 \leftrightarrow r_4$ , R = 3, $a_4, a_2, a_3 \text { 是 } a_1, a_2, a_3, a_4 \text { 的一个极大无关组 。}$
+
+
+# 课时6 解方程组
+## 概念
+- 判断方程组情况
+\begin{tabular}{|c|c|c|c|}
+\hline \multicolumn{2}{|r|}{ 条件} & \multicolumn{2}{|c|}{ 解的情况 } \\
+\hline \multirow{2}{*}{齐次} & $R(A)= \text{未知数个数}$ & \multicolumn{2}{|c|}{唯一解(零解)} \\
+\hline & $\mathrm{R}(\mathrm{A})<$ 未知数个数 & \multicolumn{2}{|c|}{多个解（零解和多个非零解 ）}\\
+\hline 
+\multirow{3}{*}{ 非齐次 } & $R(A) \neq R(A \mid b)$ & \multicolumn{2}{|c|}{无解}  \\
+\hline 
+& $R(A)=R(A \mid b)$ & $\begin{array}{l}R(A)=R(A \mid b)=\text { 末知数个数 } \\
+R(A)=R(A \mid b)<\text { 末知数个数 }\end{array}$ & 
+$\begin{array}{l} 一个非零解 \\
+多个非零解\end{array}$ 
+&\\
+\hline
+\end{tabular}
