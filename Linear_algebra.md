@@ -437,7 +437,7 @@ $$
 - 求几个行向量的极大无关组
   组合成matrix，求rank,如果有换行的顺序，则把顺序换一下，然后取前几个的行
 
-##例题
+## 例题
 ### Ex 1
 
 $$
@@ -598,3 +598,168 @@ $\begin{array}{l} 一个非零解 \\
 &\\
 \hline
 \end{tabular}
+
+- 解方程组
+  1. 求$R(A \mid b)$
+  2. 根据第一步的秩变换矩阵（R=3,前三行三列变成E）
+  3. 把第二步的矩阵变回方程组
+  4. 设n(n = 未知数个数-R)个未知数k1,...,kn
+  5. 将方程组整理成标准形式，再用k依次代替倒数第一个，第二,...第n个未知数
+ 
+- 方程组的通解，一个特解，基础解系
+    1. 通解：上述含有k的
+    2. 一个特解：可以让所有k=0
+    3. 基础解系：k后面跟的vector组合
+
+- 已知多个特解，求通解
+      1. 设有n个未知数$k_1,...k_n$ (n=x-R)
+  2. 找出n个线性无关的矩阵$X_1, X_2, ...X_n$, 使其替代x，满足要求通解的式子
+  3. 通解 $=k_1 X_1+k_2 X_2+\cdots+k_n X_n$
+  4. 如果是非齐次，找出矩阵Y,满足AY=b, 通解加一个Y
+
+
+$Ax=b$的特解为$\eta_1, \eta_2, \eta_3$ ， $R(A) = 2$, 
+已知：
+$$
+\eta_1+\eta_2=\left(\begin{array}{l}
+2 \\
+1 \\
+1 \\
+0
+\end{array}\right), \eta_2+\eta_3=\left(\begin{array}{l}
+3 \\
+1 \\
+3 \\
+1
+\end{array}\right), \eta_3+\eta_1=\left(\begin{array}{l}
+2 \\
+0 \\
+3 \\
+1
+\end{array}\right)
+$$
+
+Ax=0的通解？
+
+1. R(A)=2, 4个x, 设$k_1,k_2$
+2. 找出2个线性无关的矩阵$X_1,X_2$,使$AX_1=0, AX_2=0$
+$$\mathrm{A} \eta_1=\mathrm{b}, \quad \mathrm{A} \eta_2=\mathrm{b}, \quad \mathrm{A} \eta_3=\mathrm{b}$$
+
+$\begin{aligned} & \mathrm{A}\left(\eta_1+\eta_2\right)=\mathrm{A} \eta_1+\mathrm{A} \eta_2=\mathrm{b}+\mathrm{b}=2 \mathrm{~b} \Rightarrow \mathrm{A}\left(\begin{array}{l}2 \\ 1 \\ 1 \\ 0\end{array}\right)=2 \mathrm{~b} \\ & \mathrm{~A}\left(\eta_2+\eta_3\right)=\mathrm{A} \eta_2+\mathrm{A} \eta_3=\mathrm{b}+\mathrm{b}=2 \mathrm{~b} \Rightarrow \mathrm{A}\left(\begin{array}{l}3 \\ 1 \\ 3 \\ 1\end{array}\right)=2 \mathrm{~b} \\ & \mathrm{~A}\left(\eta_3+\eta_1\right)=\mathrm{A} \eta_3+\mathrm{A} \eta_1=\mathrm{b}+\mathrm{b}=2 \mathrm{~b} \Rightarrow \mathrm{A}\left(\begin{array}{l}2 \\ 0 \\ 3 \\ 1\end{array}\right)=2 \mathrm{~b}\end{aligned}$
+
+$\begin{aligned} & A\left(\begin{array}{l}2 \\ 1 \\ 1 \\ 0\end{array}\right)-A\left(\begin{array}{l}3 \\ 1 \\ 3 \\ 1\end{array}\right)=2 b-2 b=0 \\ & \left.A\left(\begin{array}{l}2 \\ 1 \\ 1 \\ 0\end{array}\right)-\left(\begin{array}{l}3 \\ 1 \\ 3 \\ 1\end{array}\right)\right]=0 \\ & A\left(\begin{array}{c}-1 \\ 0 \\ -2 \\ -1\end{array}\right)=0\end{aligned}$
+
+$\begin{aligned} & A\left(\begin{array}{l}2 \\ 1 \\ 1 \\ 0\end{array}\right)-A\left(\begin{array}{l}2 \\ 0 \\ 3 \\ 1\end{array}\right)=2 b-2 b=0 \\ & \left.A\left[\begin{array}{l}2 \\ 1 \\ 1 \\ 0\end{array}\right)-\left(\begin{array}{l}2 \\ 0 \\ 3 \\ 1\end{array}\right)\right]=0 \\ & A\left(\begin{array}{l}0 \\ 1 \\ -2 \\ -1\end{array}\right)=0\end{aligned}$
+
+$X_1=\left(\begin{array}{c}-1 \\ 0 \\ -2 \\ -1\end{array}\right), X_2=\left(\begin{array}{c}0 \\ 1 \\ -2 \\ -1\end{array}\right)$
+
+   
+
+
+
+
+## 习题
+### Ex 1
+
+$$
+\left\{\begin{array}{l}
+x_1+x_2+x_4=1 \\
+x_2+x_4=2 \\
+x_1+x_3+x_4=3 \\
+x_1+x_2+x_3+2 x_4=4
+\end{array}\right.
+$$
+方程组情况？
+
+$$
+A=\left(\begin{array}{llll}
+1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 1 \\
+1 & 0 & 1 & 1 \\
+1 & 1 & 1 & 2
+\end{array}\right) \longrightarrow\left(\begin{array}{llll}
+1 & 1 & 0 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right),
+$$
+
+$$
+(A \mid b)=\left(\begin{array}{cccc|c}
+1 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 & 2 \\
+1 & 0 & 1 & 1 & 3 \\
+1 & 1 & 1 & 2 & 4
+\end{array}\right) \longrightarrow\left(\begin{array}{cccc|c}
+1 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 & 2 \\
+0 & 0 & 1 & 1 & 4 \\
+0 & 0 & 0 & 0 & -1
+\end{array}\right)
+$$
+
+$R(A)=3 \neq R(A \mid b)=4$
+无解
+
+### Ex 2
+解方程组：
+$$
+\left\{\begin{array}{l}
+x_1+x_2+x_4=1 \\
+x_2+x_4=2 \\
+x_1+x_3+x_4=3 \\
+x_1+x_2+x_3+2 x_4=5
+\end{array}\right.
+$$
+
+1. 
+$$
+(A \mid b)=\left(\begin{array}{cccc|c}
+1 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 & 2 \\
+1 & 0 & 1 & 1 & 3 \\
+1 & 1 & 1 & 2 & 5
+\end{array}\right) \longrightarrow\left(\begin{array}{llll|l}
+1 & 1 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 & 2 \\
+0 & 0 & 1 & 1 & 4 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right)
+$$
+
+2. $\left(\begin{array}{cccc|c}
+1 & 0 & 0 & 0 & -1 \\
+0 & 1 & 0 & 1 & 2 \\
+0 & 0 & 1 & 1 & 4 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right)$
+
+3. $\left\{\begin{array}{l}
+x_1=-1 \\
+x_2+x_4=2 \\
+x_3+x_4=4
+\end{array}\right.$
+
+4. $n=4-3=1$
+
+5. 
+$$
+\left\{\begin{array}{l}x_1=-1 \\ x_2+x_4=2 \\ x_3+x_4=4 \\ x_4=x_4\end{array} \Rightarrow\left\{\begin{array}{l}x_1=-1 \\ x_2=2-k \\ x_3=4-k \\ x_4=k\end{array} \Rightarrow\left\{\begin{array}{l}x_1=-1+0 k \\ x_2=2-1 k \\ x_3=4-1 k \\ x_4=0+1 k\end{array}\right.\right.\right.
+$$
+
+6. $\left(\begin{array}{c}-1 \\ 2 \\ 4 \\ 0\end{array}\right)+k\left(\begin{array}{c}0 \\ -1 \\ -1 \\ 1\end{array}\right)$
+
+
+# 课时7 方阵对角化及其应用
+## 规范正交化
+
+\begin{aligned}
+& b_1=a_1 \\
+& b_2=a_2 \frac{\left[b_1, a_2\right]}{\left[b_1, b_1\right]} b_1 \\
+& b_3=a_3 \frac{\left[b_1, a_3\right]}{\left[b_1, b_1\right]} b_1 \frac{\left[b_2, a_3\right]}{\left[b_2, b_2\right]} b_2 \\
+& \cdots \cdots \\
+& b_n=a_n \frac{\left[b_1, a_n\right]}{\left[b_1, b_1\right]} b_1 \frac{\left[b_2, a_n\right]}{\left[b_2, b_2\right]} b_2 \cdots \frac{\left[b_{n-1}, a_n\right]}{\left[b_{n-1}, b_{n-1}\right]} b_{n-1} \\
+& e_1=\frac{b_1}{\left\|b_1\right\|} \quad e_2=\frac{b_2}{\left\|b_2\right\|} \quad e_3=\frac{b_3}{\left\|b_3\right\|} \quad \cdots e_n=\frac{b_n}{\left\|b_n\right\|}
+\end{aligned}
+
